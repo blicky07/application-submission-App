@@ -1,0 +1,71 @@
+/* Header.css */
+
+/* General styling for the header */
+.header {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000; /* Adjust the z-index as needed */
+}
+
+/* Navbar styling */
+.navbar {
+  width: 100%; /* Set the width to 100% to make it responsive */
+  background-color: #6889aa;
+  padding: 10px 15px;
+  color: #333;
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* Spread items evenly across the container */
+}
+
+/* Style the brand link */
+.navbar-brand {
+  font-size: 1.5em;
+  font-weight: bold;
+  text-decoration: none;
+  color: #333;
+}
+
+/* Style the navigation links */
+.nav-link {
+  margin-right: 15px;
+  font-weight: 500;
+  color: #333;
+  text-decoration: none;
+}
+
+/* Style the Apply button container */
+.buttons-container {
+  display: flex;
+  align-items: center;
+}
+
+/* Apply and Login button styling */
+.apply-button,
+.login-button {
+  margin-right: 30px;
+}
+
+/* Primary button styling */
+.btn-primary {
+  font-weight: bold;
+  background-color: #639ade;
+  border-color: #007bff;
+}
+
+/* Responsive styles using media queries */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column; /* Stack items vertically on small screens */
+    align-items: flex-start;
+  }
+
+  .nav-link {
+    margin: 5px 0; /* Adjust spacing for small screens */
+  }
+
+  .buttons-container {
+    margin-left: auto;
+  }
+}

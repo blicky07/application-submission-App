@@ -1,0 +1,29 @@
+/* Home.css */
+
+/* Styles for the header */
+header {
+    background-color: #6494b4;
+    color: rgb(255, 255, 255);
+    text-align: center;
+    padding: 20px 0;
+  }
+  
+  /* Styles for the main content */
+  main {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  main p {
+    font-size: 18px;
+    line-height: 1.6;
+  }
+  
+  main img {
+    display: block;
+    margin: 20px auto;
+    max-width: 100%;
+    height: auto;
+  }
+  
