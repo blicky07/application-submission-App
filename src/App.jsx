@@ -1,13 +1,20 @@
 // eslint-disable-next-line no-unused-vars
 import React from 'react';
+import { useState } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Login from './Containers/Login.jsx';
 import RegisterUser from './Containers/RegisterUser.jsx';
 import Header from './Components/Header.jsx';
 import Home from './Components/Home.jsx';
-import Contact from './Components/Contact.jsx';
+import ForgotPassword from './Containers/ForgotPassword.jsx';
+import Contact from './Containers/Contact.jsx';
+import ApplicationForm from './Containers/ApplicationForm.jsx';
+//import Links from './Components/Links.jsx';
 
 function App() {
+
+  const [formData, setFormData] = useState({}); // Initialize formData state
+
   return (
     <>
     <BrowserRouter>
@@ -17,6 +24,9 @@ function App() {
         <Route path="login" element={<Login />} /> {/* Route for the Login page */}
         <Route path="register" element={<RegisterUser />} /> {/* Route for the registration page */}
         <Route path="contact" element={<Contact />} /> {/* Route for the Contact page */}
+        <Route path="apply" element={<ApplicationForm formData={formData} setFormData={setFormData} />} /> {/* Pass formData and setFormData as props to ApplicationForm */}
+        <Route path="password/forgot" element={<ForgotPassword />} /> 
+        {/*<Route path="links" element={<Links />} /> */}
       </Routes>
     </BrowserRouter>
     </>

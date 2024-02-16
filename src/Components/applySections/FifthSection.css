@@ -1,0 +1,58 @@
+/* Style for the entire form container */
+.fifthSection-form {
+    max-width: 800px;
+    margin: auto;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+  }
+  
+  /* Style for the headings */
+  h2 {
+    color: #333;
+  }
+  
+  /* Style for the paragraphs */
+  p {
+    color: #555;
+    line-height: 1.5;
+  }
+  
+  /* Style for labels */
+  label {
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
+  }
+  
+  /* Style for input fields */
+  input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+  }
+  
+  /* Style for checkboxes and their labels */
+  input[type="checkbox"] {
+    margin-right: 5px;
+  }
+  
+  /* Style for the supervisor's declaration section */
+  div {
+    margin-top: 10px;
+    font-weight: bold;
+  }
+  
+  /* Style for the research topic section */
+  strong {
+    color: #333;
+  }
+  
+  /* Style for the paragraph below the research topic section */
+  p {
+    margin-top: -10px;
+    color: #888;
+  }
+  
+  /* Add more styles as needed based on your design */
+  

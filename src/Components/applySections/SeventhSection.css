@@ -1,0 +1,106 @@
+/* Style for the entire SeventhSection container */
+.seventh-section-container {
+    max-width: 800px;
+    margin: auto;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+  }
+  
+  /* Style for the headings */
+  .seventh-section-container h2 {
+    color: #333;
+  }
+  
+  /* Style for the paragraphs */
+  .seventh-section-container p {
+    color: #555;
+    line-height: 1.5;
+  }
+  
+  /* Style for the file input and upload button */
+  .seventh-section-container input[type="file"] {
+    margin-bottom: 10px;
+  }
+  
+  .seventh-section-container button {
+    background-color: #3498db;
+    color: white;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .seventh-section-container input[type="checkbox"] {
+    margin-right: 10px;
+  }
+  
+  /* Style for the date input */
+  .seventh-section-container input[type="date"] {
+    padding: 8px;
+  }
+  
+  /* Style for the checklist */
+  .seventh-section-container ol {
+    list-style-type: disc;
+    padding: 0;
+  }
+  
+  .seventh-section-container li {
+    margin-bottom: 10px;
+    list-style: disc;
+  }
+  
+  /* Style for the upload success message */
+  .seventh-section-container .upload-success {
+    color: green;
+    font-weight: bold;
+  }
+  
+  /* Add this to your existing styles */
+.checkbox-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px; /* Adjust margin as needed */
+  }
+  
+  .checkbox-item input {
+    margin-right: 8px; /* Adjust margin as needed */
+  }
+  
+  
+  /* Style for the review modal */
+  .seventh-section-container .review-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .seventh-section-container .review-modal h2 {
+    color: white;
+  }
+  
+  .seventh-section-container .review-modal pre {
+    max-width: 600px;
+    margin: 20px;
+    padding: 20px;
+    background: white;
+    border-radius: 5px;
+    overflow-x: auto;
+  }
+  
+  .seventh-section-container .review-modal button {
+    margin-top: 10px;
+    padding: 10px;
+    background: #3498db;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+  

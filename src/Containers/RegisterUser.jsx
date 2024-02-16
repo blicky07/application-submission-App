@@ -1,47 +1,62 @@
-// RegisterUser.jsx
-
 // eslint-disable-next-line no-unused-vars
 import React, { useState } from 'react';
-import axios from 'axios';
-import './RegisterUser.css'
+import './RegisterUser.css';
 
 const RegisterUser = () => {
-  const [username, setUsername] = useState('');
-  const [email, setEmail] = useState('');
-  const [citizenship, setCitizenship] = useState('');
-  const [academicQualification, setAcademicQualification] = useState('');
-  const [password, setPassword] = useState('');
-  const [confirmPassword, setConfirmPassword] = useState('');
+  const [formData, setFormData] = useState({
+    username: '',
+    email: '',
+    citizenship: '',
+    academicQualification: '',
+    password: '',
+    confirmPassword: '',
+  });
+
   const [error, setError] = useState('');
   const [success, setSuccess] = useState(false);
+  const [loading, setLoading] = useState(false);
+
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({
+      ...formData,
+      [name]: value,
+    });
+  };
 
   const handleRegisterUser = async (e) => {
     e.preventDefault();
 
-    if (password !== confirmPassword) {
+    if (formData.password !== formData.confirmPassword) {
       setError('Passwords do not match');
       return;
     }
 
+    setLoading(true);
+
     try {
-      const response = await axios.post('http://localhost:5000/backend/register', {
-        username,
-        email,
-        citizenship,
-        academicQualification,
-        password,
+      const response = await fetch('http://localhost:5000/register/register', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
       });
+
+      const responseData = await response.json();
 
       if (response.status === 201) {
         setSuccess(true);
         setError('');
       } else {
         setSuccess(false);
-        setError('Failed to register user');
+        setError(responseData.message || 'Failed to register user');
       }
     } catch (error) {
       setSuccess(false);
       setError('Failed to register user');
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -55,8 +70,8 @@ const RegisterUser = () => {
             type="text"
             id="username"
             name="username"
-            value={username}
-            onChange={(e) => setUsername(e.target.value)}
+            value={formData.username}
+            onChange={handleInputChange}
             required
           />
         </div>
@@ -66,8 +81,8 @@ const RegisterUser = () => {
             type="email"
             id="email"
             name="email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
+            value={formData.email}
+            onChange={handleInputChange}
             required
           />
         </div>
@@ -77,8 +92,8 @@ const RegisterUser = () => {
             type="text"
             id="citizenship"
             name="citizenship"
-            value={citizenship}
-            onChange={(e) => setCitizenship(e.target.value)}
+            value={formData.citizenship}
+            onChange={handleInputChange}
             required
           />
         </div>
@@ -88,8 +103,8 @@ const RegisterUser = () => {
             type="text"
             id="academicQualification"
             name="academicQualification"
-            value={academicQualification}
-            onChange={(e) => setAcademicQualification(e.target.value)}
+            value={formData.academicQualification}
+            onChange={handleInputChange}
             required
           />
         </div>
@@ -99,8 +114,8 @@ const RegisterUser = () => {
             type="password"
             id="password"
             name="password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
+            value={formData.password}
+            onChange={handleInputChange}
             required
           />
         </div>
@@ -110,12 +125,14 @@ const RegisterUser = () => {
             type="password"
             id="confirmPassword"
             name="confirmPassword"
-            value={confirmPassword}
-            onChange={(e) => setConfirmPassword(e.target.value)}
+            value={formData.confirmPassword}
+            onChange={handleInputChange}
             required
           />
         </div>
-        <button type="submit">Register</button>
+        <button type="submit" disabled={loading}>
+          {loading ? 'Registering...' : 'Register'}
+        </button>
       </form>
       {error && <p className="error-message">{error}</p>}
       {success && <p className="success-message">Registration successful!</p>}

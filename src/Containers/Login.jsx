@@ -1,31 +1,55 @@
 // eslint-disable-next-line no-unused-vars
 import React, { useState } from 'react';
-import axios from "axios";
-import {Link, useNavigate} from 'react-router-dom';
-import './Login.css'
+import { Link, useNavigate } from 'react-router-dom';
+import './Login.css';
 
 const Login = () => {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+  const [formData, setFormData] = useState({
+    email: '',
+    password: '',
+  });
+
   const [error, setError] = useState('');
+  const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
+
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({
+      ...formData,
+      [name]: value,
+    });
+  };
 
   const handleLogin = async (e) => {
     e.preventDefault();
+
     try {
-      const response = await axios.post('http://localhost:5000/backend/login', {
-        email,
-        password,
+      setLoading(true);
+
+      const response = await fetch('http://localhost:5000/login', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
       });
 
-      const token = response.data.token;
-      localStorage.setItem('token', token); // Store the token in localStorage
+      if (!response.ok) {
+        throw new Error('Invalid email or password');
+      }
+
+      const data = await response.json();
+      const token = data.token;
+      localStorage.setItem('token', token);
 
       // Redirect user to home page after successful login
-      navigate.push('/home'); 
+      navigate('/');
     } catch (error) {
       setError('Invalid email or password');
-    }onabort
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -38,8 +62,8 @@ const Login = () => {
             type="text"
             id="email"
             name="email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
+            value={formData.email}
+            onChange={handleInputChange}
             required
           />
         </div>
@@ -49,15 +73,20 @@ const Login = () => {
             type="password"
             id="password"
             name="password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
+            value={formData.password}
+            onChange={handleInputChange}
             required
           />
         </div>
-        <button type="submit">Login</button>
+        <Link to="/password/forgot">Forgot Password ?</Link>
+        <button type="submit" disabled={loading}>
+          {loading ? 'Logging in...' : 'Login'}
+        </button>
       </form>
       {error && <p className="error-message">{error}</p>}
-      <p>Not registered? <Link to="/register">Register here</Link></p>
+      <p>
+        Not registered? <Link to="/register">Register here</Link>
+      </p>
     </div>
   );
 };

@@ -4,7 +4,7 @@
 .login-container {
   max-width: 400%; /* Set a maximum width to control the size */
   width: 400px;
-  margin: 0 auto; /* Center the login form horizontally */
+  margin:80px auto 0; /* Center the login form horizontally */
   padding: 20px;
   border: 1px solid #ccc;
   border-radius: 8px;

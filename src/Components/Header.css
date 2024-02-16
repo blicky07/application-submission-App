@@ -13,10 +13,10 @@
   width: 100%; /* Set the width to 100% to make it responsive */
   background-color: #6889aa;
   padding: 10px 15px;
-  color: #333;
+  color: #1b1313; /* Adjust text color for better visibility */
   display: flex;
   align-items: center;
-  justify-content: space-between; /* Spread items evenly across the container */
+  justify-content:space-between; /* Spread items evenly across the container */
 }
 
 /* Style the brand link */
@@ -24,14 +24,14 @@
   font-size: 1.5em;
   font-weight: bold;
   text-decoration: none;
-  color: #333;
+  color: #1b1313; /* Adjust brand text color for better visibility */
 }
 
 /* Style the navigation links */
 .nav-link {
   margin-right: 15px;
   font-weight: 500;
-  color: #333;
+  color: #1b1313; /* Adjust link text color for better visibility */
   text-decoration: none;
 }
 
@@ -44,7 +44,7 @@
 /* Apply and Login button styling */
 .apply-button,
 .login-button {
-  margin-right: 30px;
+  margin-right: 10px;
 }
 
 /* Primary button styling */
@@ -58,14 +58,18 @@
 @media (max-width: 768px) {
   .navbar {
     flex-direction: column; /* Stack items vertically on small screens */
-    align-items: flex-start;
+    align-items: center; /* Center items on small screens */
   }
 
   .nav-link {
-    margin: 5px 0; /* Adjust spacing for small screens */
+    margin: 10px 0; /* Adjust spacing for small screens */
+    text-align: center; /* Center text on small screens */
   }
 
   .buttons-container {
-    margin-left: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10px; /* Add margin to separate buttons on small screens */
   }
 }

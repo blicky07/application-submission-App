@@ -1,0 +1,60 @@
+/* Style for the entire form container */
+.sixthSection-form {
+    max-width: 800px;
+    margin: auto;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+  }
+  
+  /* Style for the headings */
+  h2 {
+    color: #333;
+  }
+  
+  /* Style for the paragraphs */
+  p {
+    color: #555;
+    line-height: 1.5;
+  }
+  
+  /* Style for the labels */
+  label {
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
+  }
+  
+  /* Style for the textareas */
+  textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    resize: vertical;
+  }
+  
+  /* Style for the word count message */
+  p {
+    margin-top: -10px;
+    color: #888;
+  }
+  
+  /* Style for the upload button */
+  button {
+    background-color: #3498db;
+    color: white;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+  }
+  
+  /* Style for the file input */
+  input[type="file"] {
+    margin-top: 5px;
+  }
+  
+  /* Style for the upload success message */
+  .upload-success {
+    color: green;
+    font-weight: bold;
+  }
+  

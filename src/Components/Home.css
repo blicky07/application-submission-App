@@ -1,29 +1,48 @@
 /* Home.css */
 
-/* Styles for the header */
+/* Header Styles */
 header {
-    background-color: #6494b4;
-    color: rgb(255, 255, 255);
-    text-align: center;
-    padding: 20px 0;
-  }
-  
-  /* Styles for the main content */
-  main {
-    max-width: 600px;
-    margin: 0 auto;
-    padding: 20px;
-  }
-  
-  main p {
-    font-size: 18px;
-    line-height: 1.6;
-  }
-  
-  main img {
-    display: block;
-    margin: 20px auto;
-    max-width: 100%;
-    height: auto;
-  }
-  
+  background-color: #5d86ae;
+  margin: 80px auto 0; /* Added margin-top to create space between the header and the home header */
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+}
+
+/* Checklist Styles */
+.checklist {
+  background-color: #ecf0f1;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.checklist h2 {
+  color: #333;
+  font-size: medium;
+}
+
+.checklist ol {
+  list-style:circle;
+  padding: 0;
+}
+
+.checklist li {
+  font-size: small;
+  margin-bottom: 10px;
+}
+
+.checklist-icon {
+  margin-right: 50px; /* Adjust the margin as needed */
+}
+
+/* Apply Button Styles */
+.apply-button {
+  size: 40%;
+  text-align: center;
+  margin-top: 20px;
+}
+
+/* Adjust the button style as needed */
+.apply-button a {
+  text-decoration: none;
+}

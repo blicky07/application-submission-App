@@ -31,12 +31,13 @@ const Header = () => {
 
   return (
     <div className="header">
-      <Navbar bg="primary" data-bs-theme="dark" sticky="top" expand="lg">
+      <Navbar bg="primary" data-bs-theme="dark" expand="lg">
         {/* ... Navbar structure ... */}
         <Nav className="mr-auto">
           <Link to="/" className={`nav-link ${location.pathname === '/home' ? 'active' : ''}`}>Home</Link>
           <Link to="/register" className={`nav-link ${location.pathname === '/register' ? 'active' : ''}`}>Register</Link>
-          <Link to="/contact" className={`nav-link ${location.pathname === '/contact' ? 'active' : ''}`}>Contact</Link>
+          <Link to="/links" className={`nav-link ${location.pathname === '/links' ? 'active' : ''}`}>Useful links</Link>
+          <Link to="/contact" className={`nav-link ${location.pathname === '/contact' ? 'active' : ''}`}>Contact us</Link>
         </Nav>
         <div className="buttons-container">
             <ApplyButton /> {/* Include the ApplyButton component within the Navbar */}
