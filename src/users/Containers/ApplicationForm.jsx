@@ -1,13 +1,14 @@
 // eslint-disable-next-line no-unused-vars
 import React, { useState } from 'react';
 
-import FirstSection from '../../Components/applySections/FirstSection';
-import SecondSection from '../../Components/applySections/SecondSection';
-import ThirdSection from '../../Components/applySections/ThirdSection';
-import FourthSection from '../../Components/applySections/FourthSection';
-import FifthSection from '../../Components/applySections/FifthSection';
-import SixthSection from '../../Components/applySections/SixthSection';
-import SeventhSection from '../../Components/applySections/SeventhSection';
+import FirstSection from '../Components/applySections/FirstSection';
+import SecondSection from '../Components/applySections/SecondSection';
+import ThirdSection from '../Components/applySections/ThirdSection';
+import FourthSection from '../Components/applySections/FourthSection';
+import FifthSection from '../Components/applySections/FifthSection';
+import SixthSection from '../Components/applySections/SixthSection';
+import SeventhSection from '../Components/applySections/SeventhSection';
+
 import './ApplicationForm.css';
 
 const ApplicationForm = () => {
