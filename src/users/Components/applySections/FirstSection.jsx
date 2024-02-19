@@ -10,6 +10,10 @@ const FirstSection = ({ formData = {}, onFormChange }) => {
     onFormChange(field, value);
   };
 
+  if (typeof formData !== 'object' || formData === null) {
+    formData = {};
+  }
+
   return (
     <div className="first-section">
       <form className="firstSection-form">
@@ -135,20 +139,9 @@ const FirstSection = ({ formData = {}, onFormChange }) => {
 };
 
 FirstSection.propTypes = {
-  formData: PropTypes.shape({
-    degree: PropTypes.string,
-    previousStudy: PropTypes.string,
-    perthID: PropTypes.string,
-    cmID: PropTypes.string,
-    title: PropTypes.string,
-    givenName: PropTypes.string,
-    otherNames: PropTypes.string,
-    familyName: PropTypes.string,
-    previousName: PropTypes.string,
-    dob: PropTypes.string,
-    gender: PropTypes.string,
-  }),
+  formData: PropTypes.object,
   onFormChange: PropTypes.func.isRequired,
 };
+
 
 export default FirstSection;

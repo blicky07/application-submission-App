@@ -9,7 +9,7 @@ const UserList = () => {
     useEffect(() => {
         const fetchUsers = async () => {
           try {
-            const response = await fetch('http://localhost:5000/users'); 
+            const response = await fetch('http://localhost:5000/admin/users'); 
             const userData = await response.json();
             setUsers(userData);
             setLoading(false);
@@ -21,6 +21,24 @@ const UserList = () => {
     
         fetchUsers();
       }, []);
+
+
+      const handleDeleteUser = async (userId) => {
+        try {
+          setLoading(true);
+          // Perform the necessary steps to delete the user with the specified userId
+          // Send a DELETE request to the backend API to delete the user
+          // After successfully deleting the user, fetch the updated list of users
+          await fetch(`http://localhost:5000/admin/users/${userId}`, {
+            method: "DELETE",
+          });
+          setUsers(users.filter((user) => user.id !== userId));
+        } catch (error) {
+          console.error("Error deleting user:", error);
+        } finally {
+          setLoading(false);
+        }
+      };
     
       return (
         <div>
@@ -44,6 +62,9 @@ const UserList = () => {
                     <td>{user.email}</td>
                     <td>{user.citizenship}</td>
                     <td>{user.academicQualification}</td>
+                    <td>
+                        <button onClick={() => handleDeleteUser(user.id)}>Delete</button>
+                    </td>
                   </tr>
                 ))}
               </tbody>
