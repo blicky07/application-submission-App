@@ -1,9 +1,19 @@
 // eslint-disable-next-line no-unused-vars
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import './FourthSection.css';
+import './FourthSection.css'
 
 const FourthSection = ({ formData = {}, onFormChange }) => {
+  const {
+    prevResearch,
+    institution,
+    withdrawalDate,
+    areaofStudy,
+    studyType,
+    year,
+    studyPeriod,
+  } = formData;
+
   // Declare state variables
   const [institutionDetails, setInstitutionDetails] = useState([
     { institutionName: '', qualification: '', gpa: '', duration: '', firstYear: '', lastYear: '' },
@@ -42,7 +52,7 @@ const FourthSection = ({ formData = {}, onFormChange }) => {
             </tr>
           </thead>
           <tbody>
-            {formData.institutionDetails.map((detail, index) => (
+            {institutionDetails && institutionDetails.map((detail, index) => (
               <tr key={index}>
                 <td>
                   <input
@@ -102,7 +112,7 @@ const FourthSection = ({ formData = {}, onFormChange }) => {
         </label>
         <select
           id="prevResearch"
-          value={formData.prevResearch}
+          value={prevResearch}
           onChange={(e) => handleSelectChange('prevResearch', e.target.value)}
         >
           <option value="yes">Yes</option>
@@ -112,7 +122,7 @@ const FourthSection = ({ formData = {}, onFormChange }) => {
         <label htmlFor="institution">At which Institution?</label>
         <input
           type="text"
-          value={formData.institution}
+          value={institution}
           onChange={(e) => handleSelectChange('institution', e.target.value)}
         />
 
@@ -121,7 +131,7 @@ const FourthSection = ({ formData = {}, onFormChange }) => {
         </label>
         <input
           type="text"
-          value={formData.withdrawalDate}
+          value={withdrawalDate}
           onChange={(e) => handleSelectChange('withdrawalDate', e.target.value)}
         />
 
@@ -131,7 +141,7 @@ const FourthSection = ({ formData = {}, onFormChange }) => {
         <label htmlFor="areaofStudy">Major area of study(e.g. Chemical Engineering)</label>
         <input
           type="text"
-          value={formData.areaofStudy}
+          value={areaofStudy}
           onChange={(e) => handleSelectChange('areaofStudy', e.target.value)}
         />
 
@@ -141,7 +151,7 @@ const FourthSection = ({ formData = {}, onFormChange }) => {
         </label>
         <select
           id="studyType"
-          value={formData.studyType}
+          value={studyType}
           onChange={(e) => handleSelectChange('studyType', e.target.value)}
         >
           <option value="fulltime">Full-time</option>
@@ -153,14 +163,14 @@ const FourthSection = ({ formData = {}, onFormChange }) => {
         <input
           type="text"
           id="year"
-          value={formData.year}
+          value={year}
           onChange={(e) => handleSelectChange('year', e.target.value)}
         />
         <label htmlFor="studyPeriod">Study Period</label>
         <input
           type="text"
           id="studyPeriod"
-          value={formData.studyPeriod}
+          value={studyPeriod}
           onChange={(e) => handleSelectChange('studyPeriod', e.target.value)}
         />
       </form>
@@ -175,8 +185,8 @@ FourthSection.propTypes = {
     withdrawalDate: PropTypes.string,
     areaofStudy: PropTypes.string,
     studyType: PropTypes.string,
-    year: PropTypes.string,
-    studyPeriod: PropTypes.string,
+      year: PropTypes.string,
+      studyPeriod: PropTypes.string,
     institutionDetails: PropTypes.arrayOf(
       PropTypes.shape({
         institutionName: PropTypes.string,

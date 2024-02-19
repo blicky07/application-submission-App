@@ -2,14 +2,14 @@
 import React from 'react';
 import { useState } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import Login from './Containers/Login.jsx';
-import RegisterUser from './Containers/RegisterUser.jsx';
-import Header from './Components/Header.jsx';
-import Home from './Components/Home.jsx';
-import ForgotPassword from './Containers/ForgotPassword.jsx';
-import Contact from './Containers/Contact.jsx';
-import ApplicationForm from './Containers/ApplicationForm.jsx';
-//import Links from './Components/Links.jsx';
+import Login from './users/Containers/Login.jsx';
+import RegisterUser from './users/Containers/RegisterUser.jsx';
+import Header from './users/Components/Header.jsx';
+import Home from './users/Components/Home.jsx';
+import ForgotPassword from './users/Containers/ForgotPassword.jsx';
+import Contact from './users/Containers/Contact.jsx';
+import ApplicationForm from './users/Containers/ApplicationForm.jsx';
+//import Links from './users/Components/Links.jsx';
 
 function App() {
 

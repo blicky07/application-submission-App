@@ -1,14 +1,13 @@
 // eslint-disable-next-line no-unused-vars
 import React, { useState } from 'react';
-import PropTypes from 'prop-types'; // Import PropTypes
 
-import FirstSection from '../Components/applySections/FirstSection';
-import SecondSection from '../Components/applySections/SecondSection';
-import ThirdSection from '../Components/applySections/ThirdSection';
-import FourthSection from '../Components/applySections/FourthSection';
-import FifthSection from '../Components/applySections/FifthSection';
-import SixthSection from '../Components/applySections/SixthSection';
-import SeventhSection from '../Components/applySections/SeventhSection';
+import FirstSection from '../../Components/applySections/FirstSection';
+import SecondSection from '../../Components/applySections/SecondSection';
+import ThirdSection from '../../Components/applySections/ThirdSection';
+import FourthSection from '../../Components/applySections/FourthSection';
+import FifthSection from '../../Components/applySections/FifthSection';
+import SixthSection from '../../Components/applySections/SixthSection';
+import SeventhSection from '../../Components/applySections/SeventhSection';
 import './ApplicationForm.css';
 
 const ApplicationForm = () => {
@@ -77,11 +76,6 @@ const ApplicationForm = () => {
     );
 
     
-};
-
-// Define PropTypes for the ApplicationForm component
-ApplicationForm.propTypes = {
-    formData: PropTypes.object.isRequired, // formData prop is required and should be an object
 };
 
 export default ApplicationForm;
