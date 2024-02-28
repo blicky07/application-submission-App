@@ -4,7 +4,7 @@ import './RegisterUser.css';
 
 const RegisterUser = () => {
   const [formData, setFormData] = useState({
-    username: '',
+    name: '',
     email: '',
     citizenship: '',
     academicQualification: '',
@@ -65,12 +65,12 @@ const RegisterUser = () => {
       <h2>Registration Page</h2>
       <form onSubmit={handleRegisterUser}>
         <div className="input-group">
-          <label htmlFor="username">Username:</label>
+          <label htmlFor="name">Name:</label>
           <input
             type="text"
-            id="username"
-            name="username"
-            value={formData.username}
+            id="name"
+            name="name"
+            value={formData.name}
             onChange={handleInputChange}
             required
           />

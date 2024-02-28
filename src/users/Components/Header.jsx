@@ -38,6 +38,7 @@ const Header = () => {
           <Link to="/register" className={`nav-link ${location.pathname === '/register' ? 'active' : ''}`}>Register</Link>
           <Link to="/links" className={`nav-link ${location.pathname === '/links' ? 'active' : ''}`}>Useful links</Link>
           <Link to="/contact" className={`nav-link ${location.pathname === '/contact' ? 'active' : ''}`}>Contact us</Link>
+          <Link to="/admin-panel" className={`nav-link ${location.pathname === '/admin-panel' ? 'active' : ''}`}>Admin Panel</Link>
         </Nav>
         <div className="buttons-container">
             <ApplyButton /> {/* Include the ApplyButton component within the Navbar */}

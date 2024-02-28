@@ -26,10 +26,14 @@ const ApplicationForm = () => {
 
     const handleFormChange = (section, data) => {
         setFormData((prevData) => ({
-          ...prevData,
-          [section]: data,
+            ...prevData,
+            [section]: {
+                ...prevData[section],
+                ...data,
+            },
         }));
     };
+    
 
     const handleReview = () => {
         setShowReview(true);
@@ -53,13 +57,13 @@ const ApplicationForm = () => {
 
     return (
         <div className='application-form-container'>
-            <FirstSection formData={formData.FirstSection} onFormChange={(data) => handleFormChange("FirstSection", data)} />
-            <SecondSection formData={formData.SecondSection} onFormChange={(data) => handleFormChange("SecondSection", data)} />
-            <ThirdSection formData={formData.ThirdSection} onFormChange={(data) => handleFormChange("ThirdSection", data)} />
-            <FourthSection formData={formData.FourthSection} onFormChange={(data) => handleFormChange("FourthSection", data)} />
-            <FifthSection formData={formData.FifthSection} onFormChange={(data) => handleFormChange("FifthSection", data)} />
-            <SixthSection formData={formData.SixthSection} onFormChange={(data) => handleFormChange("SixthSection", data)} />
-            <SeventhSection formData={formData.SeventhSection} onFormChange={(data) => handleFormChange("SeventhSection", data)} />
+            <FirstSection formData={formData} onFormChange={(data) => handleFormChange("FirstSection", data)} />
+            <SecondSection formData={formData} onFormChange={(data) => handleFormChange("SecondSection", data)} />
+            <ThirdSection formData={formData} onFormChange={(data) => handleFormChange("ThirdSection", data)} />
+            <FourthSection formData={formData} onFormChange={(data) => handleFormChange("FourthSection", data)} />
+            <FifthSection formData={formData} onFormChange={(data) => handleFormChange("FifthSection", data)} />
+            <SixthSection formData={formData} onFormChange={(data) => handleFormChange("SixthSection", data)} />
+            <SeventhSection formData={formData} onFormChange={(data) => handleFormChange("SeventhSection", data)} />
 
             <button onClick={handleReview}>Review</button>
             <button onClick={handleSubmit}>Submit</button>

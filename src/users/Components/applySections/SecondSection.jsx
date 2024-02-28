@@ -1,10 +1,26 @@
 // eslint-disable-next-line no-unused-vars
-import React, { useState } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
-import './SecondSection.css'
+import './SecondSection.css';
 
 const SecondSection = ({ formData = {}, onFormChange }) => {
-  
+  const {
+    email,
+    homePhone,
+    mobilePhone,
+    workPhone,
+    faxNumber,
+    address,
+    country,
+    town,
+    state,
+    postcode,
+    birthCountry,
+    homeLanguage,
+    citizenship,
+    nricNumber,
+  } = formData;
+
   // Function to update form data and invoke onFormChange
   const updateFormData = (field, value) => {
     // Invoke onFormChange with updated form data
@@ -19,7 +35,7 @@ const SecondSection = ({ formData = {}, onFormChange }) => {
       <input
         type="text"
         id="email"
-        value={formData.email}
+        value={email}
         onChange={(e) => updateFormData('email', e.target.value)}
       />
 
@@ -27,7 +43,7 @@ const SecondSection = ({ formData = {}, onFormChange }) => {
       <input
         type="text"
         id="homePhone"
-        value={formData.homePhone}
+        value={homePhone}
         onChange={(e) => updateFormData('homePhone', e.target.value)}
       />
 
@@ -35,7 +51,7 @@ const SecondSection = ({ formData = {}, onFormChange }) => {
       <input
         type="text"
         id="mobilePhone"
-        value={formData.mobilePhone}
+        value={mobilePhone}
         onChange={(e) => updateFormData('mobilePhone', e.target.value)}
       />
 
@@ -43,7 +59,7 @@ const SecondSection = ({ formData = {}, onFormChange }) => {
       <input
         type="text"
         id="workPhone"
-        value={formData.workPhone}
+        value={workPhone}
         onChange={(e) => updateFormData('workPhone', e.target.value)}
       />
 
@@ -51,7 +67,7 @@ const SecondSection = ({ formData = {}, onFormChange }) => {
       <input
         type="text"
         id="faxNumber"
-        value={formData.faxNumber}
+        value={faxNumber}
         onChange={(e) => updateFormData('faxNumber', e.target.value)}
       />
 
@@ -63,7 +79,7 @@ const SecondSection = ({ formData = {}, onFormChange }) => {
       <input
         type="text"
         id="country"
-        value={formData.country}
+        value={country}
         onChange={(e) => updateFormData('country', e.target.value)}
       />
 
@@ -71,7 +87,7 @@ const SecondSection = ({ formData = {}, onFormChange }) => {
       <input
         type="text"
         id="address"
-        value={formData.address}
+        value={address}
         onChange={(e) => updateFormData('address', e.target.value)}
       />
 
@@ -79,7 +95,7 @@ const SecondSection = ({ formData = {}, onFormChange }) => {
       <input
         type="text"
         id="town"
-        value={formData.town}
+        value={town}
         onChange={(e) => updateFormData('town', e.target.value)}
       />
 
@@ -87,7 +103,7 @@ const SecondSection = ({ formData = {}, onFormChange }) => {
       <input
         type="text"
         id="state"
-        value={formData.state}
+        value={state}
         onChange={(e) => updateFormData('state', e.target.value)}
       />
 
@@ -95,7 +111,7 @@ const SecondSection = ({ formData = {}, onFormChange }) => {
       <input
         type="number"
         id="postcode"
-        value={formData.postcode}
+        value={postcode}
         onChange={(e) => updateFormData('postcode', e.target.value)}
       />
 
@@ -108,7 +124,7 @@ const SecondSection = ({ formData = {}, onFormChange }) => {
       <input
         type="text"
         id="birthCountry"
-        value={formData.birthCountry}
+        value={birthCountry}
         onChange={(e) => updateFormData('birthCountry', e.target.value)}
       />
 
@@ -116,7 +132,7 @@ const SecondSection = ({ formData = {}, onFormChange }) => {
       <input
         type="text"
         id="homelanguage"
-        value={formData.homeLanguage}
+        value={homeLanguage}
         onChange={(e) => updateFormData('homeLanguage', e.target.value)}
       />
 
@@ -124,7 +140,7 @@ const SecondSection = ({ formData = {}, onFormChange }) => {
       <input
         type="text"
         id="citizenship"
-        value={formData.citizenship}
+        value={citizenship}
         onChange={(e) => updateFormData('citizenship', e.target.value)}
       />
 
@@ -132,7 +148,7 @@ const SecondSection = ({ formData = {}, onFormChange }) => {
       <input
         type="text"
         id="nricNumber"
-        value={formData.nricNumber}
+        value={nricNumber}
         onChange={(e) => updateFormData('nricNumber', e.target.value)}
       />
     </form>

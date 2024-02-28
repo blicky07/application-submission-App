@@ -8,7 +8,9 @@ import Header from './users/Components/Header.jsx';
 import Home from './users/Components/Home.jsx';
 import ForgotPassword from './users/Containers/ForgotPassword.jsx';
 import Contact from './users/Containers/Contact.jsx';
+import Submissions from './Admin/Components/Submissions.jsx';
 import ApplicationForm from './users/Containers/ApplicationForm.jsx';
+import AdminPanel from './Admin/adminPanel.jsx';
 //import Links from './users/Components/Links.jsx';
 
 function App() {
@@ -26,7 +28,10 @@ function App() {
         <Route path="contact" element={<Contact />} /> {/* Route for the Contact page */}
         <Route path="apply" element={<ApplicationForm formData={formData} setFormData={setFormData} />} /> {/* Pass formData and setFormData as props to ApplicationForm */}
         <Route path="password/forgot" element={<ForgotPassword />} /> 
-        {/*<Route path="links" element={<Links />} /> */}
+        <Route path="submissions-management" element={<Submissions/> }  />
+        <Route path="admin-panel" element={<AdminPanel/> }  />
+        {/*<Route path="adminDashboard" element={<Dashboard />} />
+        <Route path="links" element={<Links />} /> */}
       </Routes>
     </BrowserRouter>
     </>

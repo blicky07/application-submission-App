@@ -3,17 +3,28 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import './FirstSection.css'
 
-const FirstSection = ({ formData = {}, onFormChange }) => {
+
+const FirstSection = ({ 
+  formData: {
+    degree,
+    previousStudy,
+    perthID,
+    cmID,
+    title,
+    givenName,
+    otherNames,
+    familyName,
+    previousName,
+    dob,
+    gender,
+  }, 
+  onFormChange 
+}) => {
   // Function to update form data and invoke onFormChange
   const updateFormData = (field, value) => {
     // Invoke onFormChange with updated form data
     onFormChange(field, value);
   };
-
-  if (typeof formData !== 'object' || formData === null) {
-    formData = {};
-  }
-
   return (
     <div className="first-section">
       <form className="firstSection-form">
@@ -23,7 +34,7 @@ const FirstSection = ({ formData = {}, onFormChange }) => {
         <label htmlFor="degree">Select Degree</label>
         <select
           id="degree"
-          value={formData.degree}
+          value={degree}
           onChange={(e) => updateFormData('degree', e.target.value)}
         >
           <option value="PhD">PhD</option>
@@ -36,7 +47,7 @@ const FirstSection = ({ formData = {}, onFormChange }) => {
         <label htmlFor="previousStudy">Have you previously studied at Curtin University?</label>
         <select
           id="previousStudy"
-          value={formData.previousStudy}
+          value={previousStudy}
           onChange={(e) => updateFormData('previousStudy', e.target.value)}
         >
           <option value="Yes">Yes</option>
@@ -47,7 +58,7 @@ const FirstSection = ({ formData = {}, onFormChange }) => {
         <input
           type="text"
           id="perthID"
-          value={formData.perthID}
+          value={perthID}
           onChange={(e) => updateFormData('perthID', e.target.value)}
         />
 
@@ -55,7 +66,7 @@ const FirstSection = ({ formData = {}, onFormChange }) => {
         <input
           type="text"
           id="cmID"
-          value={formData.cmID}
+          value={cmID}
           onChange={(e) => updateFormData('cmID', e.target.value)}
         />
 
@@ -68,7 +79,7 @@ const FirstSection = ({ formData = {}, onFormChange }) => {
         <input
           type="text"
           id="title"
-          value={formData.title}
+          value={title}
           onChange={(e) => updateFormData('title', e.target.value)}
         />
 
@@ -76,7 +87,7 @@ const FirstSection = ({ formData = {}, onFormChange }) => {
         <input
           type="text"
           id="givenName"
-          value={formData.givenName}
+          value={givenName}
           onChange={(e) => updateFormData('givenName', e.target.value)}
         />
 
@@ -84,7 +95,7 @@ const FirstSection = ({ formData = {}, onFormChange }) => {
         <input
           type="text"
           id="otherNames"
-          value={formData.otherNames}
+          value={otherNames}
           onChange={(e) => updateFormData('otherNames', e.target.value)}
         />
 
@@ -92,7 +103,7 @@ const FirstSection = ({ formData = {}, onFormChange }) => {
         <input
           type="text"
           id="familyName"
-          value={formData.familyName}
+          value={familyName}
           onChange={(e) => updateFormData('familyName', e.target.value)}
         />
 
@@ -108,7 +119,7 @@ const FirstSection = ({ formData = {}, onFormChange }) => {
         <input
           type="text"
           id="previousName"
-          value={formData.previousName}
+          value={previousName}
           onChange={(e) => updateFormData('previousName', e.target.value)}
         />
 
@@ -120,14 +131,14 @@ const FirstSection = ({ formData = {}, onFormChange }) => {
         <input
           type="date"
           id="dob"
-          value={formData.dob}
+          value={dob}
           onChange={(e) => updateFormData('dob', e.target.value)}
         />
 
         <label htmlFor="gender">Gender</label>
         <select
           id="gender"
-          value={formData.gender}
+          value={gender}
           onChange={(e) => updateFormData('gender', e.target.value)}
         >
           <option value="Male">Male</option>
@@ -139,9 +150,20 @@ const FirstSection = ({ formData = {}, onFormChange }) => {
 };
 
 FirstSection.propTypes = {
-  formData: PropTypes.object,
+  formData: PropTypes.shape({
+    degree: PropTypes.string,
+    previousStudy: PropTypes.string,
+    perthID: PropTypes.string,
+    cmID: PropTypes.string,
+    title: PropTypes.string,
+    givenName: PropTypes.string,
+    otherNames: PropTypes.string,
+    familyName: PropTypes.string,
+    previousName: PropTypes.string,
+    dob: PropTypes.string,
+    gender: PropTypes.string,
+  }),
   onFormChange: PropTypes.func.isRequired,
 };
-
 
 export default FirstSection;
